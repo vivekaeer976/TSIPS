@@ -1,0 +1,18 @@
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+.btn-black-color{
+  background-color: #424242;
+  color: #fff;
+}
+.btn-blue-color {
+  background-color: #009edb;
+  color: #fff;
+}
+.btn-alignment {
+  text-align: right;
+}

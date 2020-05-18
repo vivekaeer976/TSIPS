@@ -1,0 +1,10 @@
+#sidebar {
+  min-width: 150px;
+  max-width: 200px;
+  background: #333333;
+  color: #fff;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  height:100%;
+}

@@ -1,0 +1,142 @@
+<!--<mat-toolbar class="header">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <h1>TSIPS</h1>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button> File </a>
+      <a mat-button> Edit </a>
+      <a mat-button> View </a>
+      <a mat-button> Tools </a>
+      <a mat-button> Input </a>
+      <a mat-button> Output </a>
+      <a mat-button> Search </a>
+      <a mat-button> Registration </a>
+      <a mat-button> Depository </a>
+      <a mat-button> Admin </a>
+    </div>
+    <span class="menu-spacer"></span>
+    <div class="search-right"><span id="search"><i class="fa fa-search"></i></span></div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
+               [fixedTopGap]>
+    <mat-nav-list>
+      <a mat-list-item><span id="search"><i class="fa fa-inbox"></i></span>&nbsp; Inbox </a>
+      <a mat-list-item><span id="search"><i class="fa fa-search"></i></span>&nbsp; Saved Searches </a>
+      <a mat-list-item><span id="search"><i class="fa fa-bell"></i></span>&nbsp; Subscriptions </a>
+      <a mat-list-item><span id="search"><i class="fa fa-folder"></i></span>&nbsp; My Files </a>
+      <a mat-list-item><span id="search"><i class="fa fa-folder"></i></span>&nbsp; Categories </a>
+      <a mat-list-item><span id="search"><i class="fa fa-user"></i></span>&nbsp; Administration </a>
+      <a mat-list-item><span id="search"><i class="fa fa-home"></i></span>&nbsp; My Home Cabinet </a>
+      <a mat-list-item><span id="search"><i class="fa fa-folder"></i></span>&nbsp; Cabinets </a>
+      <a mat-list-item><span id="search"><i class="fa fa-folder"></i></span>&nbsp; Add Repositories </a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh;">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>-->
+
+<nav class="navbar navbar-expand-sm navbar-light bg-light" *ngIf="currentUser">
+  <a href="#sidebar" data-toggle="collapse" aria-expanded="false" class="fa fa-fw fa-bars"></a>
+  <a class="navbar-brand" href="#">
+    TSIPS
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="mynav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link">File</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'/treaty'">Edit</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'/dateofmodification'">View</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Tools</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Input</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">OutPut</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Search</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Registration</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Depository</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Admin</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span id="search"><i class="fa fa-search"></i></span>
+        </div>
+      </div>
+    </form>
+  </div>
+</nav>
+
+
+<div class="collapse show" id="sidebar" style="float:left;" *ngIf="currentUser">
+  <nav>
+    <ul class="list-unstyled components mb-5" id="pageSubmenu">
+      <li class="nav-item">
+        <a class="nav-link"><i class="fa fa-inbox"></i>&nbsp; Username</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"><i class="fa fa-inbox"></i>&nbsp; Inbox</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"><i class="fa fa-search"></i>&nbsp; Saved Searches</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"><i class="fa fa-bell"></i>&nbsp; Subscriptions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"><i class="fa fa-folder"></i>&nbsp; My Files</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"><i class="fa fa-folder"></i>&nbsp; Categories</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"><i class="fa fa-user"></i>&nbsp; Administration</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"><i class="fa fa-home"></i>&nbsp; My Home Cabinet</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"><i class="fa fa-folder"></i>&nbsp; Cabinets</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"><i class="fa fa-folder"></i>&nbsp; Add Repository</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>
+
